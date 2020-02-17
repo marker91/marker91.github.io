@@ -3,6 +3,16 @@
 	<title>Тест</title>
 </head>
 <body>
-	<button>Отправить сообщение</button>
+	<button id="post-message">Отправить сообщение</button>
+	<script type="text/javascript">
+		let button = document.getElementById("post-message");
+		button.addEventListener("onclick", function (event) {
+			window.postMessage("Hi!", "*");
+		});
+		window.addEventListener("message", function (event) {
+			let divElement = document.createElement("div");
+			divElement.innerText = event.data.toString();
+		});
+	</script>
 </body>
 </html>
