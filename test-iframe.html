@@ -3,9 +3,15 @@
 	<title>Тест</title>
 </head>
 <body>
+	<button id="load">Загрузить заказ</button>
 	<button id="post-message-order-place">Создать заказ</button>
 	<button id="post-message-update-planned-times">Запланировать дату</button>
 	<script type="text/javascript">
+		let loadButton = document.getElementById("load");
+		loadButton.onclick = function () {
+			schedule.load();
+		};
+
 		let orderPlaceButton = document.getElementById("post-message-order-place");
 		orderPlaceButton.onclick = function () {
 			let orderPlace = {};
@@ -30,6 +36,7 @@
 			let json = JSON.parse(JSON.stringify(result));
 			parent.postMessage(json, "*");
 		};
+
 		let updatePlannedTimesButton = document.getElementById("post-message-update-planned-times");
 		updatePlannedTimesButton.onclick = function () {
 			let plannedOrderProduct = {};
@@ -46,6 +53,7 @@
 			let json = JSON.parse(JSON.stringify(result));
 			parent.postMessage(json, "*");
 		};
+
 		window.addEventListener("message", function (event) {
 			console.info(event.data);
 		}, false);
