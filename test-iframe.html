@@ -46,6 +46,9 @@
 			let json = JSON.parse(JSON.stringify(result));
 			parent.postMessage(json, "*");
 		};
+		window.addEventListener("message", function (event) {
+			console.info(event.data);
+		}, false);
 	</script>
 </body>
 </html>
