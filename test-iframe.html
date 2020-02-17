@@ -9,7 +9,7 @@
 	<script type="text/javascript">
 		let loadButton = document.getElementById("load");
 		loadButton.onclick = function () {
-			let result = { eventType: "LOAD", payload: null };
+			let result = { action: "LOAD", payload: null };
 			let json = JSON.parse(JSON.stringify(result));
 			parent.postMessage(json, "*");
 		};
@@ -31,7 +31,7 @@
 			orderPlace.productPlannedTimes = [plannedProduct];
 
 			let result = {
-				eventType: "CREATE",
+				action: "CREATE",
 				payload: orderPlace
 			};
 
@@ -48,7 +48,7 @@
 			let plannedOrderProductArray = [plannedOrderProduct];
 
 			let result = {
-				eventType: "UPDATE_PLANNED_TIMES",
+				action: "UPDATE_PLANNED_TIMES",
 				payload: plannedOrderProductArray
 			};
 
