@@ -9,12 +9,8 @@
 		button.onclick = function (event) {
 			window.postMessage("Hi!", "*");
 		};
-		let oldDiv = button;
 		window.addEventListener("message", function (event) {
-			let divElement = document.createElement("div");
-			divElement.innerText = event.data.toString();
-			document.body.insertBefore(oldDiv, divElement);
-			oldDiv = divElement;
+			console.log(event.data)
 		});
 	</script>
 </body>
