@@ -8,15 +8,15 @@
 	<script type="text/javascript">
 		let orderPlaceButton = document.getElementById("post-message-order-place");
 		orderPlaceButton.onclick = function () {
-			let orderPlace = new schedule.OrderPlace();
-			orderPlace.contact = new schedule.Contact();
+			let orderPlace = {};
+			orderPlace.contact = {};
 			orderPlace.contact.id = "836D505F-C7B4-11E8-B7C8-5433952BAE0D";
 			orderPlace.contact.firstName = "Test";
 			orderPlace.contact.lastName = "Test";
 			orderPlace.contact.middleName = "Test";
 			orderPlace.contact.birthDate = new Date();
 
-			let plannedProduct = new schedule.PlannedProduct();
+			let plannedProduct = {};
 			plannedProduct.productId = "DAE1CD37-800B-4B66-82C8-CDACE2014CA5";
 			plannedProduct.plannedTime = new Date();
 
@@ -32,7 +32,7 @@
 		};
 		let updatePlannedTimesButton = document.getElementById("post-message-update-planned-times");
 		updatePlannedTimesButton.onclick = function () {
-			let plannedOrderProduct = new schedule.PlannedOrderProduct();
+			let plannedOrderProduct = {};
 			plannedOrderProduct.orderProductId = "F1178777-4265-11EA-E8AD-34F64BA47A0F";
 			plannedOrderProduct.plannedTime = new Date();
 
