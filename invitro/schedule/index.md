@@ -104,7 +104,7 @@
         
         {
         
-            action: "GO_TO_ORDER_UPDATE"
+            action: "GO_TO_ORDER"
             
             payload: {
                          
@@ -175,7 +175,7 @@
     // Переход к оформлению заказа в АРМПС2
     
     let result = {
-        action: "GO_TO_ORDER_UPDATE",
+        action: "GO_TO_ORDER",
         payload: {
             orderId: "836D505F-C7B4-11E8-B7C8-5433952BAE0D"
         }
