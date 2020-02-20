@@ -160,7 +160,7 @@
      
     let result = {
         action: "CREATE",
-     	payload: orderPlace
+        payload: orderPlace
     };
      
     let json = JSON.parse(JSON.stringify(result));
@@ -175,7 +175,7 @@
     // Переход к оформлению заказа в АРМПС2
     
     let result = {
-        action: "GO_TO_ORDER_UPDATE"
+        action: "GO_TO_ORDER_UPDATE",
         payload: {
             orderId: "836D505F-C7B4-11E8-B7C8-5433952BAE0D"
         }
