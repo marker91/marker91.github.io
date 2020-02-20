@@ -200,7 +200,7 @@
     
     let result = {
         action: "UPDATE_PLANNED_TIMES",
-    	payload: plannedOrderProductArray
+        payload: plannedOrderProductArray
     };
     
     let json = JSON.parse(JSON.stringify(result));
