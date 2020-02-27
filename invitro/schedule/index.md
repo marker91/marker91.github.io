@@ -62,7 +62,19 @@
         
         payload: {
    
-            contactId: "<UUID идентификатор пациента>"
+            contact: {
+                    
+                id: "<UUID идентификатор пациента>"
+                        		
+                firstName: "<Имя пациента>"
+                        		
+                lastName: "<Фамилия пациента>"
+                        	
+                middleName: "<Отчетсво пациента>"
+                        		
+                birthDate: <Дата рождения пациента, тип Date>
+                    
+            }
 
             productPlannedTimes: [
                          
@@ -145,7 +157,13 @@
     
     let orderPlace = {};
     
-    orderPlace.contactId = "836D505F-C7B4-11E8-B7C8-5433952BAE0D";
+    orderPlace.contact = {};
+    
+    orderPlace.contact.id = "836D505F-C7B4-11E8-B7C8-5433952BAE0D";
+    orderPlace.contact.firstName = "Test";
+    orderPlace.contact.lastName = "Test";
+    orderPlace.contact.middleName = "Test";
+    orderPlace.contact.birthDate = new Date();
     
     let plannedProduct = {};
     plannedProduct.productId = "DAE1CD37-800B-4B66-82C8-CDACE2014CA5";
