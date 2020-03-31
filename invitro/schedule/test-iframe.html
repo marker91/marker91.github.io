@@ -26,7 +26,7 @@
 
 			let plannedProduct = {};
 			plannedProduct.productId = "DAE1CD37-800B-4B66-82C8-CDACE2014CA5";
-			plannedProduct.plannedTime = new Date();
+			plannedProduct.plannedTime = new Date().toUTCString();
 
 			orderPlace.productPlannedTimes = [plannedProduct];
 
