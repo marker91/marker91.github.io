@@ -4,7 +4,8 @@
 </head>
 <body>
 	<button id="load">Загрузить заказ</button>
-	<button id="post-message-order-place">Создать заказ</button>
+	<button id="post-message-order-place-with-contact-id">Создать заказ c contactId</button>
+	<button id="post-message-order-place-without-contact-id">Создать заказ без contactId</button>
 	<button id="post-message-update-planned-times">Запланировать дату</button>
 	<script type="text/javascript">
 		let loadButton = document.getElementById("load");
@@ -14,18 +15,20 @@
 			parent.postMessage(json, "*");
 		};
 
-		let orderPlaceButton = document.getElementById("post-message-order-place");
-		orderPlaceButton.onclick = function () {
+		function orderPlace (hasId) {
 			let orderPlace = {};
 			orderPlace.contact = {};
-			orderPlace.contact.id = null;//"836D505F-C7B4-11E8-B7C8-5433952BAE0D";
-			orderPlace.contact.firstName = "Test";
-			orderPlace.contact.lastName = "Test";
-			orderPlace.contact.middleName = "Test";
-			orderPlace.contact.birthDate = new Date();
-			orderPlace.contact.gender = "MALE";
-			orderPlace.contact.email = "123@qwe.ru";
-			orderPlace.contact.phone = "9609473652";
+			if (hasId) {
+				orderPlace.contact.id = "836D505F-C7B4-11E8-B7C8-5433952BAE0D";
+			} else {
+				orderPlace.contact.firstName = "Test";
+				orderPlace.contact.lastName = "Test";
+				orderPlace.contact.middleName = "Test";
+				orderPlace.contact.birthDate = new Date();
+				orderPlace.contact.gender = "MALE";
+				orderPlace.contact.email = "123@qwe.ru";
+				orderPlace.contact.phone = "9609473652";
+			}
 
 			let plannedProduct = {};
 			plannedProduct.productId = "DAE1CD37-800B-4B66-82C8-CDACE2014CA5";
@@ -40,7 +43,13 @@
 
 			let json = JSON.parse(JSON.stringify(result));
 			parent.postMessage(json, "*");
-		};
+		}
+
+		let orderPlaceWithContactIdButton = document.getElementById("post-message-order-place-with-contact-id");
+		orderPlaceWithContactIdButton.onclick = () => orderPlace(true);
+
+		let orderPlaceWithoutContactIdButton = document.getElementById("post-message-order-place-without-contact-id");
+		orderPlaceWithoutContactIdButton.onclick = () => orderPlace(false);
 
 		let updatePlannedTimesButton = document.getElementById("post-message-update-planned-times");
 		updatePlannedTimesButton.onclick = function () {
