@@ -170,6 +170,9 @@
     orderPlace.contact.lastName = "Test";
     orderPlace.contact.middleName = "Test";
     orderPlace.contact.birthDate = new Date();
+    orderPlace.contact.gender = "MALE";
+    orderPlace.contact.email = "example@example.com";
+    orderPlace.contact.phone = "+79609473652";
     
     let plannedProduct = {};
     plannedProduct.productId = "DAE1CD37-800B-4B66-82C8-CDACE2014CA5";
